@@ -1,3 +1,9 @@
 1) git init - 
 2) git config --global user.name 'Azim'
 3) git config --global user.email samsalievazim@gmail.com
+4) git remote add origin path - это команда соединяет удаленный репозиторий
+5) git status - команда для проверки файлов (Состояние)
+6) git add file (*) - добавление всех неотслеж. одним символом
+7) git commit -m "text mini" - сохраняет Состояние объекта
+8) git push origin branch_name
+9) git log - просмотр коммитов
