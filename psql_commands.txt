@@ -59,4 +59,3 @@ SELECT DISTINCT field FROM table OFFSET 4; -> return unique
 UPDATE table SET field = 'new_value' WHERE id = 1; 
 
 
-here are edits
