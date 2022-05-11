@@ -1,0 +1,59 @@
+БД - это хранения структурированных данных 
+СУБД - Система управления БД
+SQL / noSQL - sql бд отличия в том что имеет отношения между таблицами(объектами)
+noSQL -не имеет отношений
+
+CREATE DATABASE name_database;
+CREATE DATABASE name_database WITH OWNER role_name;
+CREATE ROLE name_role WITH (extension);
+
+УДАЛЕНИЕ 
+DROP ROLE name_role;
+DROP DATABASE name_database;
+
+\c database_name --> connection
+
+\d какие 
+\dt показывает
+
+\d table_name --> покажет структуры таблицы
+CREATE TABLE table_name(
+    name_field  type_field  constrain(blank)
+);
+
+INSERT INTO name_table (name_field, .....) VALUES('write_data', ....);
+
+SELECT *(field's | all) FROM table_name;
+SELECT field FROM table_name WHERE name_table = '...' LIMIT 5;
+SELECT * FROM table WHERE field1 = 'some1' AND field2 = 'some2';
+SELECT * FROM table WHERE field = 'some' OR field2 = 'some2';
+SELECT * FROM table_name LIMIT int; frist_limit_obj;
+SELECT * FROM table_name OFFSET int;
+SELECT * FROM table_name OFFSET int LIMIT int;
+SELECT * FROM table_name WHERE field IN ('some1', 'some2');
+
+
+AGGREGATE FUNC:
+
+AVG, COUNT, SUM, MAX, MIN
+
+SELECT COUNT(*) FROM table_name;
+SELECT AVG(field) FROM table_name; (SUM, MAx, MIN)
+SELECT COUNT(*), field_name1 FROM table_name GROUP BY field_name1;
+SELECT COUNT(*), field_name1 FROM table_name GROUP BY field_name1 HAVING COUNT(*) > INT;
+
+SELECT * FROM table WHERE NOT field = 'some';
+SELECT * FROM table WHERE field !=(<>) 'some';
+SELECT * FROM table WHERE field IS NULL;
+
+SELECT field AS new_field FROM table;
+SELECT * FROM table ORDER BY field (default=ASC) DESC;
+
+SELECT * FROM table WHERE field BETTWEEN 'some1' AND 'some2' LIMIT 2;
+
+SELECT * FROM table WHERE field BETTWEEN LIKE '%some1%' AND ILIKE '%some2%' LIMIT 2;
+
+SELECT DISTINCT field FROM table; -> unique
+SELECT DISTINCT field FROM table OFFSET 4; -> return unique
+
+UPDATE table SET field = 'new_value' WHERE id = 1; 
