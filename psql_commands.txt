@@ -59,3 +59,16 @@ SELECT DISTINCT field FROM table OFFSET 4; -> return unique
 UPDATE table SET field = 'new_value' WHERE id = 1; 
 
 
+""" JOIN, CASE"""
+
+CREATE TABLE:
+Первичный ключ <---------------- FK id_name
+
+INNER JOIN
+RIGHT OUTER JOIN
+LEFT OUTER JOIN
+FULL OUTER JOIN
+
+SELECT user.name, o.quantity FROM order AS o INNER JOIN user AS u ON order.id_user = user.id;
+
+SELECT u.name, p.title, o.quantity FROM order_item AS oi INNER JOIN products AS p ON oi.id_product = p.id INNER JOIN order AS o ON oi.id_order = o.id INNER JOIN user AS u ON o.id_users = u.id;
